@@ -1,0 +1,81 @@
+kirius@Inspiron:conwork$ cat >> pets.txt
+Марго кошка 20.10.2015
+Грей собака 15.06.2016
+Симба хомяк 13.12.2020
+Соня собака 02.03.2021  
+Полкан кот 20.11.2019
+Марта хомяк 20.05.2022
+kirius@Inspiron:conwork$ cat >> pack_anim.txt
+Василий конь 30.09.2020
+Найда верблюд 11.04.2020 
+Кран осел 22.03.2019
+Север верблюд 14.06.2018
+Быстрый конь 23.07.2021
+Проня осел 14.03.2020
+kirius@Inspiron:conwork$ cat pets.txt pack_anim.txt >> all_animals.txt
+kirius@Inspiron:conwork$ cat all_animals.txt 
+Марго кошка 20.10.2015
+Грей собака 15.06.2016
+Симба хомяк 13.12.2020
+Соня собака 02.03.2021
+Полкан кот 20.11.2019
+Марта хомяк 20.05.2022
+Василий конь 30.09.2020
+Найда верблюд 11.04.2020
+Кран осел 22.03.2019
+Север верблюд 14.06.2018
+Быстрый конь 23.07.2021
+Проня осел 14.03.2020
+kirius@Inspiron:conwork$ mv all_animals.txt HumanFriends.txt
+kirius@Inspiron:conwork$ ls -l
+total 12
+-rw-rw-r-- 1 kirius kirius 401 сен 30 20:12 HumanFriends.txt
+-rw-rw-r-- 1 kirius kirius 205 сен 30 20:11 pack_anim.txt
+-rw-rw-r-- 1 kirius kirius 196 сен 30 20:04 pets.txt
+kirius@Inspiron:conwork$ mkdir test
+kirius@Inspiron:conwork$ ls -l
+total 16
+-rw-rw-r-- 1 kirius kirius  401 сен 30 20:12 HumanFriends.txt
+-rw-rw-r-- 1 kirius kirius  205 сен 30 20:11 pack_anim.txt
+-rw-rw-r-- 1 kirius kirius  196 сен 30 20:04 pets.txt
+drwxrwxr-x 2 kirius kirius 4096 сен 30 20:16 test
+kirius@Inspiron:conwork$ mv HumanFriends.txt test/
+kirius@Inspiron:conwork$ ls -l test/
+total 4
+-rw-rw-r-- 1 kirius kirius 401 сен 30 20:12 HumanFriends.txt
+kirius@Inspiron:conwork$ sudo dpkg -i drawio-amd64-24.7.8.deb 
+[sudo] password for kirius: 
+Выбор ранее не выбранного пакета draw.io.
+(Чтение базы данных … на данный момент установлено 212811 файлов и каталогов.)
+Подготовка к распаковке drawio-amd64-24.7.8.deb …
+Распаковывается draw.io (24.7.8) …
+Настраивается пакет draw.io (24.7.8) …
+update-alternatives is /usr/bin/update-alternatives
+update-alternatives: используется /opt/drawio/drawio для предоставления /usr/bin/drawio (drawio) в автоматическом режиме
+Обрабатываются триггеры для hicolor-icon-theme (0.17-2) …
+Обрабатываются триггеры для shared-mime-info (2.1-2) …
+Обрабатываются триггеры для mailcap (3.70+nmu1ubuntu1) …
+Обрабатываются триггеры для gnome-menus (3.36.0-1ubuntu3) …
+Обрабатываются триггеры для desktop-file-utils (0.26-1ubuntu3) …
+kirius@Inspiron:conwork$ sudo dpkg -l | grep draw
+ii  draw.io                               24.7.8                                  amd64        
+ii  graphviz                              2.42.2-6ubuntu0.1                       amd64        rich set of graph drawing tools
+ii  libcdt5:amd64                         2.42.2-6ubuntu0.1                       amd64        rich set of graph drawing tools - cdt library
+ii  libcgraph6:amd64                      2.42.2-6ubuntu0.1                       amd64        rich set of graph drawing tools - cgraph library
+ii  libgvc6                               2.42.2-6ubuntu0.1                       amd64        rich set of graph drawing tools - gvc library
+ii  libgvpr2:amd64                        2.42.2-6ubuntu0.1                       amd64        rich set of graph drawing tools - gvpr library
+ii  liblab-gamut1:amd64                   2.42.2-6ubuntu0.1                       amd64        rich set of graph drawing tools - liblab_gamut library
+ii  libpathplan4:amd64                    2.42.2-6ubuntu0.1                       amd64        rich set of graph drawing tools - pathplan library
+ii  libreoffice-draw                      1:7.3.7-0ubuntu0.22.04.7                amd64        office productivity suite -- drawing
+ii  libxft2:amd64                         2.3.4-1                                 amd64        FreeType-based font drawing library for X
+kirius@Inspiron:conwork$ sudo dpkg -r draw.io 
+(Чтение базы данных … на данный момент установлено 212908 файлов и каталогов.)
+Удаляется draw.io (24.7.8) …
+update-alternatives: предупреждение: альтернатива /opt/drawio/drawio (часть группы ссылок drawio) не существует; удаляется из списка альтернатив
+update-alternatives: предупреждение: /etc/alternatives/drawio is dangling; it will be updated with best choice
+Обрабатываются триггеры для mailcap (3.70+nmu1ubuntu1) …
+Обрабатываются триггеры для gnome-menus (3.36.0-1ubuntu3) …
+Обрабатываются триггеры для desktop-file-utils (0.26-1ubuntu3) …
+Обрабатываются триггеры для shared-mime-info (2.1-2) …
+Обрабатываются триггеры для hicolor-icon-theme (0.17-2) …
+kirius@Inspiron:conwork$ 
