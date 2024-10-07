@@ -1,12 +1,10 @@
 package edu.gb.model.animals.packs;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class Camel extends Packs{
+public class Camel extends Pack {
     public Camel(String name, Date birthDate) {
-        this.name = name;
-        this.birthDate = birthDate;
-        this.commands = new ArrayList<>();
+        super(name, birthDate);
     }
 }

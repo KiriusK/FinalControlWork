@@ -1,15 +1,23 @@
 package edu.gb.model.animals.packs;
 
-import edu.gb.model.animals.Animals;
+import edu.gb.model.animals.Animal;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public abstract class Packs implements Animals {
-    int id;
-    String name;
-    Date birthDate;
-    List<String> commands;
+public abstract class Pack implements Animal {
+    private int id;
+    private String name;
+    private Date birthDate;
+    private List<String> commands;
+
+    public Pack(String name, Date birthDate) {
+        this.id = -1;
+        this.name = name;
+        this.birthDate = birthDate;
+        this.commands = new ArrayList<>();
+    }
 
     @Override
     public boolean changeName(String name) {

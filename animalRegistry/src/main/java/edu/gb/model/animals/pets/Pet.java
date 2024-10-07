@@ -1,15 +1,23 @@
 package edu.gb.model.animals.pets;
 
-import edu.gb.model.animals.Animals;
+import edu.gb.model.animals.Animal;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public abstract class Pets implements Animals {
-    int id;
-    String name;
-    Date birthDate;
-    List<String> commands;
+public abstract class Pet implements Animal {
+    private int id;
+    private String name;
+    private Date birthDate;
+    private List<String> commands;
+
+    public Pet(String name, Date birthDate) {
+        this.id = -1;
+        this.name = name;
+        this.birthDate = birthDate;
+        this.commands = new ArrayList<>();
+    }
 
     @Override
     public boolean changeName(String name) {

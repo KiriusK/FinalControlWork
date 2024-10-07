@@ -4,11 +4,11 @@ import edu.gb.view.ConsoleUI;
 
 public class GetCommandList extends  Command{
     public GetCommandList(ConsoleUI cons) {
-        super("Найти человека по имени.", cons);
+        super("Показать список команд.", cons);
     }
 
     @Override
     public void execute() {
-        getConsole().getHumanByName();
+        getConsole().getCommands();
     }
 }

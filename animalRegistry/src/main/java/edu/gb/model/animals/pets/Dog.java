@@ -1,12 +1,10 @@
 package edu.gb.model.animals.pets;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class Dog extends Pets{
+public class Dog extends Pet {
     public Dog(String name, Date birthDate) {
-        this.name = name;
-        this.birthDate = birthDate;
-        this.commands = new ArrayList<>();
+        super(name, birthDate);
     }
 }
