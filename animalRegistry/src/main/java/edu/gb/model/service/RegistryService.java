@@ -1,4 +1,4 @@
 package edu.gb.model.service;
 
-public class registryService {
+public class RegistryService {
 }

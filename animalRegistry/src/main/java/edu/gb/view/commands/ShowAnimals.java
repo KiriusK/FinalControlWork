@@ -3,9 +3,9 @@ package edu.gb.view.commands;
 
 import edu.gb.view.ConsoleUI;
 
-public class showAnimals extends Command{
+public class ShowAnimals extends Command{
 
-    public showAnimals(ConsoleUI cons) {
+    public ShowAnimals(ConsoleUI cons) {
         super("Показать список животных.", cons);
     }
 

@@ -1,6 +1,7 @@
 package edu.gb.view;
 
-import edu.gb.view.commands.Command;
+import edu.gb.view.commands.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,13 +10,11 @@ public class MainMenu {
 
     public MainMenu(ConsoleUI cons) {
         commandList = new ArrayList<>();
-        commandList.add(new GetLineAgeInfo(cons));
-        commandList.add(new SortTreeByNameCommand(cons));
-        commandList.add(new SortByBirthDateCommand(cons));
-        commandList.add(new AddHumanCommand(cons));
-        commandList.add(new GetHumanByName(cons));
-        commandList.add(new LoadTreeCommand(cons));
-        commandList.add(new SaveTreeCommand(cons));
+        commandList.add(new ShowAnimals(cons));
+        commandList.add(new GetCommandList(cons));
+        commandList.add(new FindByName(cons));
+        commandList.add(new AddAnimal(cons));
+        commandList.add(new AddCommand(cons));
         commandList.add(new ExitCommand(cons));
     }
 
