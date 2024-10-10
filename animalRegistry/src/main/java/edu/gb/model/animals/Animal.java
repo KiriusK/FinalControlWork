@@ -10,6 +10,5 @@ public interface Animal {
     Date getBirthdate();
     String getName();
     List<String> getCommands();
-    boolean setID(int id);
     int getID();
 }

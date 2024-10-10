@@ -12,7 +12,7 @@ public abstract class Pet implements Animal {
     private Date birthDate;
     private List<String> commands;
 
-    public Pet(String name, Date birthDate) {
+    Pet(int id, String name, Date birthDate) {
         this.id = -1;
         this.name = name;
         this.birthDate = birthDate;
@@ -33,16 +33,6 @@ public abstract class Pet implements Animal {
     public boolean changeBirthdate(Date bDate) {
         try {
             this.birthDate = bDate;
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    @Override
-    public boolean setID(int id) {
-        try {
-            this.id = id;
             return true;
         } catch (Exception e) {
             return false;
@@ -87,6 +77,7 @@ public abstract class Pet implements Animal {
         sb.append(";\n");
         sb.append("Имя: ");
         sb.append(name);
+        sb.append(";\n");
         sb.append("Дата рождения: ");
         sb.append(birthDate.toString());
         sb.append(";\n");

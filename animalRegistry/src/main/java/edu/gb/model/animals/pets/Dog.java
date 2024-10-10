@@ -1,10 +1,9 @@
 package edu.gb.model.animals.pets;
 
 import java.util.Date;
-import java.util.List;
 
 public class Dog extends Pet {
-    public Dog(String name, Date birthDate) {
-        super(name, birthDate);
+    public Dog(int id, String name, Date birthDate) {
+        super(id , name, birthDate);
     }
 }

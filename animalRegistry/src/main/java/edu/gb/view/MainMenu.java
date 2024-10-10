@@ -19,14 +19,15 @@ public class MainMenu {
     }
 
     public String menu() {
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\n");
         for (int i = 0; i < commandList.size(); i++) {
-            stringBuilder.append(i+1);
-            stringBuilder.append(". ");
-            stringBuilder.append(commandList.get(i).getDescription());
-            stringBuilder.append("\n");
+            sb.append(i+1);
+            sb.append(". ");
+            sb.append(commandList.get(i).getDescription());
+            sb.append("\n");
         }
-        return stringBuilder.toString();
+        return sb.toString();
     }
 
     public void execute(int choice){

@@ -12,8 +12,8 @@ public abstract class Pack implements Animal {
     private Date birthDate;
     private List<String> commands;
 
-    public Pack(String name, Date birthDate) {
-        this.id = -1;
+    Pack(int id, String name, Date birthDate) {
+        this.id = id;
         this.name = name;
         this.birthDate = birthDate;
         this.commands = new ArrayList<>();
@@ -60,16 +60,6 @@ public abstract class Pack implements Animal {
     }
 
     @Override
-    public boolean setID(int id) {
-        try {
-            this.id = id;
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    @Override
     public int getID() {
         return id;
     }
@@ -87,6 +77,7 @@ public abstract class Pack implements Animal {
         sb.append(";\n");
         sb.append("Имя: ");
         sb.append(name);
+        sb.append(";\n");
         sb.append("Дата рождения: ");
         sb.append(birthDate.toString());
         sb.append(";\n");

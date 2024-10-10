@@ -7,13 +7,13 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class ConsoleUI implements UI{
-    private final Presenter presenter;
-    private final MainMenu menu;
-    private final Scanner scan;
+    private Presenter presenter;
+    private MainMenu menu;
+    private Scanner scan;
     private boolean flag;
 
-    public ConsoleUI(Presenter presenter) {
-        this.presenter = presenter;
+    public ConsoleUI() {
+        this.presenter = new Presenter(this);
         this.menu = new MainMenu(this);
         this.scan = new Scanner(System.in);
         flag = true;
@@ -66,12 +66,14 @@ public class ConsoleUI implements UI{
 
     public void addAnimal() {
         String name = readName();
+        System.out.print("Введите название животного из следущего списка:\n(верблюд, лошадь, осел, собака, кошка, хомяк): ");
+        String type = scan.nextLine();
         System.out.print("Введите дату рождения в формате дд-мм-гггг: ");
         String birthStr = scan.nextLine();
         try {
             SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
             Date birthDate = df.parse(birthStr);
-            presenter.addAnimal(name, birthDate);
+            presenter.addAnimal(name, type, birthDate);
         } catch (Exception ex) {
             printError();
             show(ex.getMessage());

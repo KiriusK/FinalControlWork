@@ -1,17 +1,26 @@
 package edu.gb.model.service;
 
-public class Counter {
-    private int counter;
+import java.util.Iterator;
+
+public class Counter implements AutoCloseable, Iterator<Integer> {
+    private static int counter;
 
     public Counter() {
-        this.counter = 1;
+        counter = 1;
     }
 
-    public void increase() {
-        this.counter++;
+    @Override
+    public void close() throws Exception {
+
     }
 
-    public int getCounter() {
-        return counter;
+    @Override
+    public boolean hasNext() {
+        return counter<Integer.MAX_VALUE?true:false;
+    }
+
+    @Override
+    public Integer next() {
+        return counter++;
     }
 }

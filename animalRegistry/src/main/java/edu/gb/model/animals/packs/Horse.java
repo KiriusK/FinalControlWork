@@ -1,10 +1,9 @@
 package edu.gb.model.animals.packs;
 
 import java.util.Date;
-import java.util.List;
 
 public class Horse extends Pack {
-    public Horse(String name, Date birthDate) {
-        super(name, birthDate);
+    public Horse(int id, String name, Date birthDate) {
+        super(id, name, birthDate);
     }
 }
