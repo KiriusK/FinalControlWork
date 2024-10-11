@@ -13,7 +13,7 @@ public abstract class Pet implements Animal {
     private List<String> commands;
 
     Pet(int id, String name, Date birthDate) {
-        this.id = -1;
+        this.id = id;
         this.name = name;
         this.birthDate = birthDate;
         this.commands = new ArrayList<>();

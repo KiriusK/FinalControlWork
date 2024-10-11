@@ -15,38 +15,46 @@ import java.util.Date;
 
 public class RegistryService {
     private AnimalRegistry registry;
-//    private Counter counter;
+
 
     public RegistryService() {
         this.registry = new AnimalRegistry();
-//        this.counter = new Counter();
     }
 
 
     public boolean addAnimal(String name, String type, Date birthDate) {
-        Counter counter = new Counter();
-        int id = counter.next();
+        try (Counter counter = new Counter()) {
+        int id;
+        if (counter.hasNext()) {
+            id = counter.next();
+        } else {
+            return false;
+        }
         switch (type.toLowerCase()) {
-            case "верблюд":
+            case "в":
                 registry.addAnimal(new Camel(id, name, birthDate));
                 return true;
-            case "лошадь":
+            case "л":
                 registry.addAnimal(new Horse(id, name, birthDate));
                 return true;
-            case "осел":
+            case "о":
                 registry.addAnimal(new Donkey(id, name, birthDate));
                 return true;
-            case "собака":
+            case "с":
                 registry.addAnimal(new Dog(id, name, birthDate));
                 return true;
-            case "кошка":
+            case "к":
                 registry.addAnimal(new Cat(id, name, birthDate));
                 return true;
-            case "хомяк":
+            case "х":
                 registry.addAnimal(new Hamster(id, name, birthDate));
                 return true;
             default:
                 return false;
+        }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            return false;
         }
     }
 

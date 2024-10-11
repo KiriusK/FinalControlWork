@@ -66,7 +66,7 @@ public class ConsoleUI implements UI{
 
     public void addAnimal() {
         String name = readName();
-        System.out.print("Введите название животного из следущего списка:\n(верблюд, лошадь, осел, собака, кошка, хомяк): ");
+        System.out.print("Введите символ название животного из следущего списка:\nверблюд - в\nлошадь - л\nосел -о\nсобака - с\nкошка - к\nхомяк - х\n: ");
         String type = scan.nextLine();
         System.out.print("Введите дату рождения в формате дд-мм-гггг: ");
         String birthStr = scan.nextLine();
